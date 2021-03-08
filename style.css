@@ -12,8 +12,8 @@ body {
     body {
         background-position-x: 42%;
     }
-    
+
     canvas {
-        transform: scale(3.8);
+        transform: scale(1.3);
     }
 }
