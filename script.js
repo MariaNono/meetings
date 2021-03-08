@@ -1,9 +1,18 @@
 const {Engine, Render, World, Bodies, MouseConstraint, Composites} = Matter
+Matter.use('matter-wrap')
 
 const w = window.innerWidth
 const h = window.innerHeight
 
-Matter.use('matter-wrap')
+let cols = 7
+let rows = 6
+
+const mediaQuery = window.matchMedia('(max-width: 769px)')
+if (mediaQuery.matches) {
+  cols = 3
+  rows = 4
+}
+console.log(rows, cols)
 
 const f = () => {
   return Math.random() * (0.1 - 0.01) + 0.01
@@ -55,7 +64,7 @@ const createShape = () => {
   })
 }
 
-const initialShapes = Composites.stack(50,50,8,9,5,10, () => {
+const initialShapes = Composites.stack(50,50,cols,rows,5,10, () => {
   return createShape()
 })
 
