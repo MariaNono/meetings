@@ -44,7 +44,7 @@ const createShape = () => {
     frictionAir: f(),
     restitution: 0,
     render: {
-      opacity: 0.7,
+      opacity: 0.6,
       // fillStyle: '#fff',
       sprite:{
         texture:"Meeting.png",
