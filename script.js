@@ -36,7 +36,7 @@ const mouseControl = MouseConstraint.create(engine,{
   }
 })
 
-const createShape = function(x, y) {
+const createShape = () => {
   const bodyX = Math.random() * w
   const bodyY = Math.random() * (h + 200) - 200
   return Bodies.rectangle(bodyX, bodyY, 95, 16, {
@@ -55,8 +55,8 @@ const createShape = function(x, y) {
   })
 }
 
-const initialShapes = Composites.stack(50,50,8,9,5,10,function(x,y){
-  return createShape(x,y)
+const initialShapes = Composites.stack(50,50,8,9,5,10, () => {
+  return createShape()
 })
 
 initialShapes.bodies.forEach(shape => {
@@ -68,10 +68,10 @@ initialShapes.bodies.forEach(shape => {
 
 World.add(world, [ mouseControl, initialShapes])
 
-document.addEventListener('click', (event) => {
-  const shape = createShape(event.pageX, event.pageY)
-  World.add(world, shape)
-})
+// document.addEventListener('click', (event) => {
+//   const shape = createShape(event.pageX, event.pageY)
+//   World.add(world, shape)
+// })
 
 Engine.run(engine)
 Render.run(renderer)
