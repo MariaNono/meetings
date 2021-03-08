@@ -5,15 +5,12 @@ body {
     background-color: #000;
     background-image: url('https://i.imgur.com/hoeYEFL.gif');
     background-size:cover;
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 
 @media screen and (max-width: 769px) {
     body {
         background-position-x: 42%;
-    }
-
-    canvas {
-        transform: scale(1.3);
     }
 }
